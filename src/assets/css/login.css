@@ -1,0 +1,20 @@
+.errorMsg {
+    max-width: 100%;
+    font-size:0.75rem;
+    color:rgb(248, 106, 106);
+  }
+
+@media only screen and (max-width: 992px) {
+    .form__btn {
+        flex-direction: column;
+    }
+
+    .form__btn .addToCart__btn{
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .form__btn .btn-primary {
+       justify-content: center !important;
+    }
+}
