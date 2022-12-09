@@ -41,7 +41,7 @@ const Login = () => {
       <section>
         <Container>
           <Row>
-            <Col lg="12" md="12" sm="12" className="m-auto text-center">
+            <Col lg="6" md="12" sm="12" className="m-auto text-center">
               <form
                 className="form mb-5"
                 action=""
