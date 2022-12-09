@@ -23,7 +23,7 @@ const Cart = () => {
   const [cartProduct, setCartProduct] = useState(productCart);
 
   // lấy ra dữ liệu người dùng từ localStorage
-  const getUserLogin = getStoreJson(USER_LOGIN).email;
+  const getUserLogin = getStoreJson(USER_LOGIN)?.email;
   // Lấy ra id và quantity để đưa vào order API
   const product = cartProduct.map((product) => {
     const orderDetail = {

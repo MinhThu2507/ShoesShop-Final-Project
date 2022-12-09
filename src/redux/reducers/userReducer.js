@@ -84,7 +84,7 @@ export const getProfileApi = () => {
       // SAU khi lấy dữ liệu từ api về đưa lên reducer qua action creator
       dispatch(profileAction(result.data.content));
       saveStoreJson(PROFILE, result.data.content);
-
+      console.log(result)
     } catch (error) {
       console.log(error);
     }
@@ -130,10 +130,21 @@ export const loginFacebook = (token) => {
         const result = await axios({
           url:'https://shop.cyberlearn.vn/api/Users/facebooklogin',
           method: 'POST',
-          data: token,
-         
+          data: {
+            facebookToken: token
+          },
+          headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            "Authorization": "Bearer" + ACCESS_TOKEN
+            },
         })
-        console.log(result.data.content)
+        dispatch(loginAction(result.data.content));
+
+        saveStore(ACCESS_TOKEN, result.data.content.accessToken);
+        saveStoreJson(USER_LOGIN, result.data.content);
+
+        console.log(result)
     } catch (error) {
       console.log(error)
     }

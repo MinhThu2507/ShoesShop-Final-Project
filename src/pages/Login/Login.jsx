@@ -14,9 +14,9 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const responseFacebook = (response) => {
-    // if(response?.accessToken){
-      // dispatch(loginFacebook(response.accessToken))
-    // }
+    if(response?.accessToken){
+      dispatch(loginFacebook(response.accessToken))
+    }
     console.log(response);
   };
   const formik = useFormik({
@@ -41,7 +41,7 @@ const Login = () => {
       <section>
         <Container>
           <Row>
-            <Col lg="6" md="6" sm="12" className="m-auto text-center">
+            <Col lg="12" md="12" sm="12" className="m-auto text-center">
               <form
                 className="form mb-5"
                 action=""

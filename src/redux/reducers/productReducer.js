@@ -122,6 +122,7 @@ export const getAllProductsByCategoryApi = (id) => {
       });
 
       dispatch(getAllProductsByCategoryAction(result.data.content));
+      console.log(result.data.content)
     } catch (error) {
       console.log(error);
     }
